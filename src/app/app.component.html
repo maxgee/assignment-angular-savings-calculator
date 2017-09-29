@@ -1,0 +1,19 @@
+<h1>Savings Rate Calculator</h1>
+<div>
+  <label>Starting Amount: </label>
+  <input [(ngModel)]="savings.startAmount" placeholder="0">
+  <br>
+  <label>Rate of return (percent): </label>
+  <input [(ngModel)]="savings.rateOfReturn" placeholder="0">
+  <br>
+  <label>Years: </label>
+  <input [(ngModel)]="savings.numberOfYears" placeholder="0">
+  <br>
+  <button type="button" (click)="onCalcuate()">Calculate</button>
+  <button type="button" (click)="onReset()">Reset</button>
+</div>
+<div id="table" *ngIf="tableValues.length > 0">
+    <table><tr><th>Month</th><th>Intrest</th><th>Balance</th></tr>
+      <tr *ngFor="let value of tableValues"><td>{{value.month}}</td><td>{{value.intrest}}</td><td>{{value.balance}}</td></tr>
+    </table>
+<div>
